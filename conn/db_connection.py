@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 app = {
     'name': 'mysql+pymysql',
     'user': 'root',
-    'password': '내 DB 비밀번호',
+    'password': '1234',
     'host': 'localhost',
     'dbconn': 'testdb',
     'port': '3306'
@@ -15,7 +15,7 @@ conn_string = f'{app["name"]}://{app["user"]}:{app["password"]}@{app["host"]}:{a
 class engineconn:
 
     def __init__(self):
-        self.engine = create_engine(conn_string, pool_recycle = 500)
+        self.engine = create_engine(conn_string, pool_recycle =500)
 
     def sessionmaker(self):
         Session = sessionmaker(bind= self.engine)
