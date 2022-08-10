@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from conn.db_connection import engineconn
-from conn.db_class import Test
+from app.db.db_connection import engineconn
+from app.db.db_class import Test
 
 router = APIRouter()
 engine = engineconn()

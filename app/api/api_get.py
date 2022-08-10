@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-from conn.db_connection import engineconn
-from conn.db_class import Test
+from app.db.db_connection import engineconn
+from app.db.db_class import Test
 
 router = APIRouter()
 engine = engineconn()
 session = engine.sessionmaker()
 
-@router.get("/", tags=["get"])
+@router.get("/get", tags=["get"])
 async def first_get():
     example = session.query(Test).all()
     return example
